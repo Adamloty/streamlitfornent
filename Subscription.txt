@@ -1,0 +1,21 @@
+import streamlit as st
+from streamlit_option_menu import option_menu
+
+st.title('خطط الاشتراك')
+
+subscription_type = st.radio('اختر نوع الاشتراك:', ('monthly', 'yearly', 'buy chatxt $100'))
+
+if subscription_type == 'monthly':
+    st.write('**الاشتراك الشهري:** $10 شهريًا')
+elif subscription_type == 'yearly':
+    st.write('**الاشتراك السنوي:** $100 سنويًا')
+else:  
+    st.write('**شراء chatxt:** $100')
+
+if st.button('الانتقال إلى الصفحة التالية'):
+    if subscription_type == 'monthly':
+        st.markdown('https://www.example.com/monthly')
+    elif subscription_type == 'yearly':
+        st.markdown('https://www.example.com/yearly')
+    else: 
+        st.markdown('https://www.example.com/laptop')
